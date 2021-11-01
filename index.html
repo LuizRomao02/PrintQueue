@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DEADLOCK</title>
+    <meta name="description" content="Print Queue - Race Condition">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Luiz Romão, Aureo Buneo, Luiz Guilherme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Queue</title>
     <link href="assets/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -26,7 +29,6 @@
             </div>
         </nav>
     </header>
-
     <main>
         <div class="container">
             <div class="row ">
@@ -38,26 +40,26 @@
                                 <form id="meuForm">
                                     <div class="mb-3">
                                         <div id="fileView">
-                                            <label for="file_sample" class="form-label">Insira uma Imagem para imprimir</label>
-                                            <!-- <input class="form-control" type="file" accept="image/*,application/pdf,application/vnd.ms-excel" name="arquivo[]" id="file" multiple> -->
+                                            <label for="file_sample" class="form-label">
+                                                Insira um arquivo(s) para imprimir</label>
                                             <input class="form-control fileElem" type="file" accept="text/plain,image/*,text/html,video/*,audio/*,.pdf" name="arquivo[]" id="file" multiple>
                                         </div>
-                                        <div class="form-text">Max size: 500kb</div>
+                                        <div class="form-text">Tamaho máximo: 500000KB</div>
                                     </div>
 
                                     <div class="col-auto">
-                                        <button type="submit" id="submit_button" class="btn btn-primary mb-3 mt-3">Imprimir
-                                        Arquivo</button>
+                                        <button type="submit" id="submit_button" class="btn btn-primary mb-3 mt-3">
+                                            Imprimir Arquivo
+                                        </button>
                                     </div>
                                 </form>
-                                <div id="div_show_execute_new" class="alert alert-info" role="alert"><strong class="text-center">Pode-se
-                                    Executar uma nova ação! <br> </strong>
+                                <div id="div_show_execute_new" class="alert alert-info" role="alert">
+                                    <strong class="text-center"> Pode-se Executar uma nova ação! <br> </strong>
                                 </div>
                             </p>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-8 ">
                     <div class="card mt-5">
                         <div class="table-responsive">
@@ -73,7 +75,6 @@
                                 </thead>
                                 <tbody class="text-left">
                                     <tr>
-                                        <!-- <td><span id="list_group_span_name"> -------- </span> </td> -->
                                         <td><span id="fileListName"> -------- </span></td>
                                         <td><span id="fileListSize"> -------- </span></td>
                                         <td> <span id="fileListType"> -------- </span></td>
@@ -81,22 +82,29 @@
                                         <td><span id="fileListPrint"> -------- </span></td>
                                     </tr>
                                 </tbody>
-
-                                <!-- <div id="list_group_span_file"></div> -->
                             </table>
                             <td>
                                 <div id="div_row_success" class="alert alert-warning" role="alert">
-                                    <strong>Arquivos Selecionado! <br></strong> <span id="div_alert_span_success"></span></div>
+                                    <strong>Arquivos Selecionado!<br></strong>
+                                    <span id="div_alert_span_success"></span>
+                                </div>
                                 <div id="div_row_priting" class="alert alert-warning" role="alert">
-                                    <strong>Imprimindo! <br></strong><span id="div_alert_span_printing"></span>
+                                    <strong>Imprimindo!<br></strong>
+                                    <span id="div_alert_span_printing"></span>
                                 </div>
                                 <div id="div_show_priting" class="alert alert-success" role="alert">
-                                    <strong>Impresso com sucesso!<br></strong> <span id="div_alert_show_printing"></span></div>
+                                    <strong>Impresso com sucesso!<br></strong>
+                                    <span id="div_alert_show_printing"></span>
+                                </div>
                                 <div id="div_danger_priting" class="alert alert-danger" role="alert">
-                                    <strong>Impressora em Modo de Espera! <br> </strong> <span id="div_alert_danger_printing"></span></div>
+                                    <strong>Impressora em Modo de Espera!<br></strong>
+                                    <span id="div_alert_danger_printing"></span>
+                                </div>
 
-                                <div id="div_row_error" class="alert alert-danger" role="alert"><strong>Erro!
-                                    <br></strong><span id="div_alert_span_error"></span></div>
+                                <div id="div_row_error" class="alert alert-danger" role="alert">
+                                    <strong>Erro!<br></strong>
+                                    <span id="div_alert_span_error"></span>
+                                </div>
                             </td>
                         </div>
                     </div>
@@ -104,7 +112,6 @@
             </div>
         </div>
     </main>
-
     <script src="assets/jquery.js"></script>
     <script src="assets/bootstrap.js"></script>
     <script src="script.js"></script>

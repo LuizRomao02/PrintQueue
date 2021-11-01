@@ -18,9 +18,7 @@ $(document).ready(function() {
     $('#div_danger_priting').hide();
     max_size_file = 500000;
 
-
     $("input:file").change(function() {
-
         const fileInput = $(this);
 
         if (fileInput.get(0).files.length) {
@@ -109,7 +107,6 @@ $(document).ready(function() {
             for (let i = 0; i < this.files.length; i++) {
                 const li4 = document.createElement("li");
                 li4.style.listStyle = "none"
-                    // li4.style.marginLeft = "-15%"
                 list4.appendChild(li4);
                 const info = document.createElement("span");
                 info.innerHTML = this.files[i].type;
