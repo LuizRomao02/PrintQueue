@@ -7,5 +7,5 @@ Exemplos: Fila de Impressão.
 
 Projeto está salvando todos os tipos arquivosde até 500000 KB, ficando localizado na pasta "upload".
 
-Precisa-se rodar um apache para a inicialiação do projeto.
+Precisa-se rodar um apache para a inicialização do projeto.
 
