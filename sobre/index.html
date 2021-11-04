@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Print Queue - Race Condition">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Luiz Romão, Aureo Buneo, Luiz Guilherme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Queue</title>
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/style.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-light">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">FATEC</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Impressão</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section-about mt-5">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <h1 class="fw-lighter">Race Condition</h1>
+
+                                <div class="conteudo p-3">
+                                    <p>
+                                        Uma condição de corrida é uma situação indesejável que ocorre quando um
+                                        dispositivo ou
+                                        sistema tenta realizar duas ou mais operações ao mesmo tempo, mas devido à
+                                        natureza do
+                                        dispositivo ou sistema, as operações devem ser feitas na sequência adequada para
+                                        serem
+                                        feitas corretamente .
+                                    </p>
+
+                                    <p>
+                                        As condições da corrida são mais comumente associadas à ciência da computação e
+                                        à
+                                        programação. Eles ocorrem quando dois processos de programa de computador, ou
+                                        threads,
+                                        tentam acessar o mesmo recurso ao mesmo tempo e causam problemas no sistema.
+                                    </p>
+
+                                    <p>
+                                        As condições da corrida são consideradas um problema comum para aplicativos
+                                        multithread.
+                                        Quais são os exemplos de condições de corrida?
+                                        Um exemplo simples de condição de corrida é um interruptor de luz. Em algumas
+                                        casas,
+                                        existem vários interruptores de luz conectados a uma luz de teto comum. Quando
+                                        esses
+                                        tipos de circuitos são usados, a posição da chave torna-se irrelevante. Se a luz
+                                        estiver
+                                        acesa, mover qualquer um dos interruptores de sua posição atual desliga a luz.
+                                        Da mesma
+                                        forma, se a luz estiver apagada, mover qualquer um dos interruptores de sua
+                                        posição
+                                        atual acende a luz.
+                                    </p>
+
+                                    <p>
+                                        Com isso em mente, imagine o que poderia acontecer se duas pessoas tentassem
+                                        acender a
+                                        luz usando dois interruptores diferentes ao mesmo tempo. Uma instrução pode
+                                        cancelar a
+                                        outra ou as duas ações podem desarmar o disjuntor.
+                                    </p>
+
+                                    <p>
+                                        Na memória ou no armazenamento do computador, uma condição de corrida pode
+                                        ocorrer se os
+                                        comandos para ler e gravar uma grande quantidade de dados forem recebidos quase
+                                        no mesmo
+                                        instante, e a máquina tentar sobrescrever alguns ou todos os dados antigos
+                                        enquanto os
+                                        dados antigos ainda estão sendo leitura. O resultado pode ser um ou mais dos
+                                        seguintes:
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <img src="../img/RACE_CONDITION.png" alt="" srcset="" class="img-fluid">
+
+                                <div class="conteudo p-3">
+
+                                    <li>O computador trava ou identifica uma operação ilegal do programa</li>
+                                    <li>Erros ao ler os dados antigos</li>
+                                    <li>Erros ao escrever os novos dados</li>
+
+                                    <br>
+
+                                    <hr>
+                                    
+                                    <p>
+                                        Uma condição de corrida também pode ocorrer se as instruções forem processadas
+                                        na
+                                        ordem
+                                        incorreta.
+                                    </p>
+
+                                    <a type="button" class="btn btn-primary mt-4" href="../index.html">Impressão</a>
+
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <h3 class="fw-lighter">Quais são os tipos de condições de corrida?</h3>
+
+                                <div class="conteudo p-3">
+
+                                    <p>
+                                        Existem alguns tipos de condições de corrida. Duas categorias que definem o
+                                        impacto
+                                        da
+                                        condição de corrida em um sistema são chamadas de críticas e não críticas:
+                                    </p>
+
+                                    <p>
+                                        Uma condição de corrida crítica fará com que o estado final do dispositivo,
+                                        sistema
+                                        ou
+                                        programa seja alterado. Por exemplo, se girar dois interruptores de luz
+                                        conectados a
+                                        uma
+                                        luz comum ao mesmo tempo explodir o circuito, isso é considerado uma condição de
+                                        corrida
+                                        crítica. No software, uma condição de corrida crítica é quando uma situação
+                                        resulta
+                                        em
+                                        um bug com comportamento imprevisível ou indefinido.
+                                        Uma condição de corrida não crítica não afeta diretamente o estado final do
+                                        sistema,
+                                        dispositivo ou programa. No exemplo da luz, se a luz estiver apagada e girar os
+                                        dois
+                                        interruptores simultaneamente acender a luz e tiver o mesmo efeito de acionar um
+                                        interruptor, então é uma condição de corrida não crítica. No software, uma
+                                        condição
+                                        de
+                                        corrida não crítica não resulta em um bug.
+                                        As condições de corrida críticas e não críticas não se limitam à eletrônica ou à
+                                        programação. Eles podem ocorrer em muitos tipos de sistemas onde ocorrem as
+                                        condições de
+                                        corrida.
+                                    </p>
+
+                                    <p>
+                                        Na programação, dois tipos principais de condições de corrida ocorrem em uma
+                                        seção
+                                        crítica do código, que é uma seção do código executada por vários threads.
+                                        Quando
+                                        vários
+                                        threads tentam ler uma variável e, em seguida, cada um age sobre ela, uma das
+                                        seguintes
+                                        situações pode ocorrer:
+                                    </p>
+
+                                    <li> Ler-modificar-escrever. Esse tipo de condição de corrida acontece quando dois
+                                        processos
+                                        lêem um valor em um programa e escrevem de volta um novo valor. Freqüentemente,
+                                        causa um
+                                        bug de software. Como no exemplo acima, a expectativa é que os dois processos
+                                        aconteçam
+                                        sequencialmente - o primeiro processo produz seu valor e, em seguida, o segundo
+                                        processo
+                                        lê esse valor e retorna um diferente.
+                                    </li>
+
+                                    <p>
+                                        Por exemplo, se os cheques contra uma conta corrente forem processados
+                                        ​​sequencialmente, o sistema verificará se há fundos suficientes na conta para
+                                        processar
+                                        o cheque A primeiro e, em seguida, verificará novamente se há fundos suficientes
+                                        para
+                                        processar o cheque B após processar o cheque A. No entanto, se os dois cheques
+                                        forem
+                                        processados ​​ao mesmo tempo, o sistema pode ler o mesmo valor de saldo de conta
+                                        para
+                                        ambos os processos e fornecer um valor de saldo de conta incorreto, fazendo com
+                                        que
+                                        a
+                                        conta fique a descoberto.
+                                    </p>
+
+
+                                    <li> Verifique e aja. Essa condição de corrida ocorre quando dois processos
+                                        verificam um
+                                        valor sobre o qual cada um realizará uma ação externa. Ambos os processos
+                                        verificam
+                                        o
+                                        valor, mas apenas um processo pode levar o valor com ele. O processo que ocorre
+                                        posteriormente lerá o valor como nulo. Isso resulta em uma observação
+                                        potencialmente
+                                        desatualizada ou indisponível sendo usada para determinar o que o programa fará
+                                        a
+                                        seguir. Por exemplo, se um aplicativo de mapa executa dois processos
+                                        simultaneamente
+                                        que
+                                        requerem os mesmos dados de localização, um pegará o valor primeiro para que o
+                                        outro
+                                        não
+                                        possa usá-lo. O último processo lê os dados como nulos.</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-5">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <h3 class="fw-lighter">Quais vulnerabilidades de segurança as condições de corrida
+                                    causam?</h3>
+
+                                <div class="conteudo p-3">
+
+                                    <p>
+                                        Um programa projetado para lidar com tarefas em uma sequência específica pode
+                                        apresentar problemas de segurança se for solicitado a executar duas ou mais
+                                        operações simultaneamente. Um agente de ameaça pode aproveitar o lapso de tempo
+                                        entre o momento em que o serviço é iniciado e o momento em que um controle de
+                                        segurança entra em vigor para criar uma situação de deadlock ou bloqueio de
+                                        thread.
+
+                                        Uma vulnerabilidade de deadlock é uma forma grave de vulnerabilidade de negação
+                                        de
+                                        serviço. Pode ocorrer quando dois ou mais threads devem esperar um pelo outro
+                                        para
+                                        adquirir ou liberar um bloqueio em uma cadeia circular. Essa situação resulta em
+                                        um
+                                        impasse, em que todo o sistema de software é interrompido porque esses bloqueios
+                                        nunca podem ser adquiridos ou liberados se a cadeia for circular.
+
+                                        O bloco de threads também pode impactar drasticamente o desempenho do
+                                        aplicativo.
+                                        Nesse tipo de defeito de simultaneidade, um encadeamento chama uma operação de
+                                        longa
+                                        duração enquanto mantém um bloqueio e evita o progresso de outros encadeamentos.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/jquery.js"></script>
+    <script src="../assets/bootstrap.js"></script>
+
+</body>
+
+</html>

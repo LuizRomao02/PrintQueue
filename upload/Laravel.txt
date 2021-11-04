@@ -1,0 +1,41 @@
+Criando projeto no laraval
+
+composer create-project laravel/laravel nomedoprojeto
+
+Subindo o servidor
+
+php artisan serve
+
+Gerando chave de aplicação Laravel
+
+php artisan key:generate
+
+Criando controller
+
+php artisan make:controller nomedocontroller
+
+Método invoke permite chamar um classe como se fosse um executável
+
+php artisan make:controller nomedocontroller --invokable
+
+Senha Mysql Root: 1234
+
+Criando tabelas do migrate do laravel
+
+php artian migrate
+
+Criando tabela clientes na migrations via comando
+
+php artisan make:migration create_clients_table
+
+Criando Model
+
+php artisan make:model Client
+
+
+
+Criando formulario de alter - 7
+
+
+
+create database nomedadatabase;

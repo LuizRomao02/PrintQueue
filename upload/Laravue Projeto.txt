@@ -1,0 +1,27 @@
+Criando projeto no laraval
+
+composer create-project laravel/laravel nomedoprojeto
+
+php artisan serve
+
+Criando projeto no Vue
+
+vue create nomedoprojeto
+
+npm run serve
+
+Banco de dados com 10 Usuario, Dados falsos
+
+php artisan migrate:fresh --seed
+
+Criando Model
+
+php artisan make:model Post
+
+Migration
+
+php artisan make:migration create_posts_table
+
+php artisan make:factory PostFactory 
+
+https://www.youtube.com/watch?v=lbMcCIkEEmo&ab_channel=TiagoMatos

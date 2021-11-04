@@ -1,0 +1,7 @@
+Mudar o tamanho da VM
+
+cd C:\Program Files\Oracle\VirtualBox
+
+Mudando o tamanho
+
+vboxmanage modifyhd "C:\Users\luizg\VirtualBox VMs\Ubuntu\Ubuntu.vdi" --resize 20480 

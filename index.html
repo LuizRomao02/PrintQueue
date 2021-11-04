@@ -1,121 +1,147 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Print Queue - Race Condition">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Luiz Romão, Aureo Buneo, Luiz Guilherme">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Print Queue</title>
     <link href="assets/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body class="bg-light">
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">FATEC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
-                        class="navbar-toggler-icon"></span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sobre/">Sobre</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Impressão</a>
                         </li>
+
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>
+
     <main>
         <div class="container">
             <div class="row ">
                 <div class="col-md-4">
                     <div class="card mt-5">
                         <div class="card-body">
-                            <h5 class="card-title">Área de Impressão</h5>
+                            <h5 class="fw-lighter">Área de Impressão</h5>
                             <p class="card-text">
-                                <form id="meuForm">
-                                    <div class="mb-3">
-                                        <div id="fileView">
-                                            <label for="file_sample" class="form-label">
-                                                Insira um arquivo(s) para imprimir</label>
-                                            <input class="form-control fileElem" type="file" accept="text/plain,image/*,text/html,video/*,audio/*,.pdf" name="arquivo[]" id="file" multiple>
-                                        </div>
-                                        <div class="form-text">Tamaho máximo: 500000KB</div>
-                                    </div>
 
-                                    <div class="col-auto">
-                                        <button type="submit" id="submit_button" class="btn btn-primary mb-3 mt-3">
-                                            Imprimir Arquivo
-                                        </button>
+                            <form id="meuForm">
+                                <div class="mb-3">
+                                    <div id="fileView">
+                                        <label for="file_sample" class="form-label">
+                                            Insira um arquivo(s) para imprimir</label>
+                                        <input class="form-control fileElem" type="file"
+                                            accept="text/plain,image/*,text/html,video/*,audio/*,.pdf" name="arquivo[]"
+                                            id="file" multiple>
                                     </div>
-                                </form>
-                                <div id="div_show_execute_new" class="alert alert-info" role="alert">
-                                    <strong class="text-center"> Pode-se Executar uma nova ação! <br> </strong>
+                                    <div class="form-text">Tamaho máximo: 500000KB</div>
                                 </div>
+
+                                <div class="col-auto">
+                                    <button type="submit" id="submit_button" class="btn btn-primary mb-3 mt-3">
+                                        Imprimir Arquivo
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div id="div_show_execute_new" class="alert alert-info text-center" role="alert">
+                                <strong> Pode-se Executar uma nova ação!</strong>
+                            </div>
+
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 ">
+
+                <div class="col-md-8">
                     <div class="card mt-5">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                        <div class="table-responsive px-3">
+
+                            <table class="table text-center ">
                                 <thead class="text-center">
                                     <tr>
                                         <th>Nome</th>
                                         <th>Tamanho</th>
-                                        <th>Tipo</th>
-                                        <th>Modificado</th>
+                                        <th>Tipo</th> -->
+                                        <th>Modificado</th> 
                                         <th>Arquivos</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-left">
-                                    <tr>
+                                <tbody>
+                                    <tr >
                                         <td><span id="fileListName"> -------- </span></td>
                                         <td><span id="fileListSize"> -------- </span></td>
-                                        <td> <span id="fileListType"> -------- </span></td>
+                                        <td><span id="fileListType"> -------- </span></td>
                                         <td><span id="fileListModified"> -------- </span></td>
                                         <td><span id="fileListPrint"> -------- </span></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <td>
-                                <div id="div_row_success" class="alert alert-warning" role="alert">
-                                    <strong>Arquivos Selecionado!<br></strong>
-                                    <span id="div_alert_span_success"></span>
-                                </div>
-                                <div id="div_row_priting" class="alert alert-warning" role="alert">
-                                    <strong>Imprimindo!<br></strong>
-                                    <span id="div_alert_span_printing"></span>
-                                </div>
-                                <div id="div_show_priting" class="alert alert-success" role="alert">
-                                    <strong>Impresso com sucesso!<br></strong>
-                                    <span id="div_alert_show_printing"></span>
-                                </div>
-                                <div id="div_danger_priting" class="alert alert-danger" role="alert">
-                                    <strong>Impressora em Modo de Espera!<br></strong>
-                                    <span id="div_alert_danger_printing"></span>
-                                </div>
 
-                                <div id="div_row_error" class="alert alert-danger" role="alert">
-                                    <strong>Erro!<br></strong>
-                                    <span id="div_alert_span_error"></span>
+                            <td>
+                                <div class="offset-md-3 col-md-6 text-center">
+                                    <div id="div_row_success" class="alert alert-warning" role="alert">
+                                        <strong>Arquivos Selecionado!</strong>
+                                        <span id="div_alert_span_success"></span>
+                                    </div>
+                                    <div id="div_row_priting" class="alert alert-warning" role="alert">
+                                        <strong>Imprimindo!</strong>
+                                        <span id="div_alert_span_printing"></span>
+                                    </div>
+                                    <div id="div_show_priting" class="alert alert-success" role="alert">
+                                        <strong>Impresso com sucesso!</strong>
+                                        <span id="div_alert_show_printing"></span>
+                                    </div>
+                                    <div id="div_danger_priting" class="alert alert-danger" role="alert">
+                                        <strong>Impressora em Modo de Espera!</strong>
+                                        <span id="div_alert_danger_printing"></span>
+                                    </div>
+    
+                                    <div id="div_row_error" class="alert alert-danger" role="alert">
+                                        <strong>Erro!</strong>
+                                        <span id="div_alert_span_error"></span>
+                                    </div>
                                 </div>
                             </td>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
     <script src="assets/jquery.js"></script>
     <script src="assets/bootstrap.js"></script>
     <script src="script.js"></script>
-    </script>
+
 </body>
 
 </html>
